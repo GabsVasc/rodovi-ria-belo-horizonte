@@ -27,6 +27,7 @@ export class PassageiroService implements IPassageiroService {
 
   async cadastrarPassageiro(usuarioDto: CriarUsuarioDto): Promise<TokenPayload> {
     try {
+      console.log('teste');
       const funcionario = passageiroFactory(usuarioDto);
       const funcionarioSalvo = await this.usuarioRepository.save(funcionario);
       const { senha, ...funcionarioTratado } = funcionarioSalvo;
